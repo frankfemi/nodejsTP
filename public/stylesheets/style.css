@@ -1,0 +1,19 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #EDEDED;
+}
+.header {
+  color: #fff;
+  padding: 20px  20px;
+  top: 0px;
+  width: 100%;
+  background: #E53935;
+  text-align:center;
+}
+
+a {
+  color: #00B7FF;
+}

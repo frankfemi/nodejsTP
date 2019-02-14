@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <% include head %> 
+  </head>
+  <body>
+      <% include menu %>
+      <div align='center'><a href="/newconf">Ajouter une conférence</a></div>
+      <br/>
+      <table style='width:60%' align='center'>
+        <tbody>
+            <tr style='border: solid'>
+              <th style='border: solid'>Nom</th>
+              <th style='border: solid'>Date début</th>
+              <th style='border: solid'>Heure début</th>
+              <th style='border: solid'>Heure fin</th>
+              <th style='border: solid'>Lieu</th>
+              <th style='text-align:center;border: solid'>Action</th>
+            </tr>
+            <% conflist.forEach(function(conf) { %>
+              <tr style='border: solid'>
+                  <td style='border: solid'><%= conf.nom %> </td>
+                  <td style='border: solid'><%= moment(conf.date_debut).format( 'DD-MM-YYYY') %> </td>
+                  <td style='border: solid'><%= conf.heure_debut %> </td>
+                  <td style='border: solid'><%= conf.heure_fin %> </td>
+                  <td style='border: solid'><%= conf.lieu %> </td>
+                  <td style='border: solid;text-align: center'>
+                    <a href="./editconf/<%= conf._id %>">Editer</a> | 
+                    <a href="./deleteconf/<%= conf._id %>" onClick="return confirm('Etes-vous sûr de vouloir supprimer cette conférence ?')">Supprimer</a> |
+                    <a href="./inscription/<%= conf._id %>">Inscription</a> |
+                    <a href="./chat">Participer</a>
+                  </td>
+              </tr>
+          <% }); %>
+        </tbody>
+      </table>
+  </body>
+  <% include script %>
+</html>

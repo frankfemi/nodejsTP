@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <% include head %> 
+  </head>
+  <body>
+        <% include menu %>
+        <h5 align='center'>INSCRIPTION A UNE CONFERENCE</h5>
+      <div style='width: 100%' align='center'>
+          <form method="post" action="/inscription/<%= confdetail._id %>" name="inscription">
+            <p>
+                <label>Conférence:</label><br>
+                <input disabled="disabled" type="text" name="nom" value="<%= confdetail.nom %>">
+            </p>  
+            <p>
+                <label>Date début:</label><br>
+                <input disabled="disabled" type="text" name="date_debut" value="<%= moment(confdetail.date_debut).format( 'DD-MM-YYYY') %> %>">
+            </p>  
+            <p>
+            <p>
+                <label>Heure début:</label><br>
+                <input disabled="disabled" type="text" name="heure_debut" value="<%= confdetail.heure_debut %>">
+            </p> 
+            <p>
+                <label>Heure fin:</label><br>
+                <input disabled="disabled" type="text" name="heure_fin" value="<%= confdetail.heure_fin %>">
+            </p>  
+            <p>
+                <label>Lieu:</label><br>
+                <input disabled="disabled" type="text" name="lieu" value="<%= confdetail.lieu %>">
+            </p> 
+            <p>
+              <label>Login:</label><br>
+              <input type="text" name="login">
+            </p>
+            <p>
+              <label>Password:</label><br>
+              <input type="text" name="password">
+            </p>
+            <br>
+            <p>
+              <input type="submit" value="Participer">
+            </p>
+          </form>
+      </div>
+  </body>
+  <% include script %>
+</html>

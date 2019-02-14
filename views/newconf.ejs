@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <% include head %> 
+  </head>
+  <body>
+      <% include menu %>
+      <div style='width: 100%' align='center'>
+          <form method="post" action="/addconf" name="addconf">
+            <p>
+              <label>Nom Conférence:</label><br>
+              <input type="text" name="nomConf">
+            </p>
+            <p>
+              <label>date début:</label><br>
+              <input type="date" name="dateDeb">
+            </p>
+            <p>
+              <label>heure début:</label><br>
+              <input type="datetime" name="heureDeb">
+            </p>
+            <p>
+              <label>heure fin:</label><br>
+              <input type="datetime" name="heureFin">
+            </p>
+            <p>
+              <label>lieu:</label><br>
+              <input type="text" name="lieu">
+            </p>
+            <p>
+              <input type="submit" value="Enregister">
+            </p>
+          </form>
+      </div>
+      <div align='center'><a href="/conflist">Liste des conférences</a></div>
+  </body>
+  <% include script %>
+</html>
